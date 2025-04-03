@@ -362,6 +362,10 @@ main p {
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.card__content a{
+    margin-top: 20px;
+}
+
 .card:hover .card__content {
     transform: rotateX(0deg);
 }
@@ -382,6 +386,10 @@ main p {
     font-size: 14px;
     color: #777;
     line-height: 1.4;
+}
+
+#card1{
+    background: url('../public/img-project/projeto-login-page.jpg')no-repeat center center;
 }
 
 .button-projet{
