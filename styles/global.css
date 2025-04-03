@@ -429,6 +429,19 @@ main p {
         text-align: center;
         margin-bottom: 20px;
     }
+    .card__content{
+        display: none;
+    }
+    .card svg {
+        display: none;
+    }
+    .card {
+        transform: scale(1.05);
+        box-shadow: 0 0 0;
+    }
+    .card:hover{
+        box-shadow: 0 0 0;
+    }
 }
 
 @media (max-width: 480px){
