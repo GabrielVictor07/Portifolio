@@ -322,133 +322,11 @@ main p {
     flex-wrap: wrap;
 }
 
-.card {
-    position: relative;
-    width: 300px;
-    height: 200px;
-    background-color: #f2f2f2;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    perspective: 1000px;
-    box-shadow: 0 0 0 5px #ffffff80;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.card svg {
-    width: 48px;
-    fill: #333;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-}
-
-.card__content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: #f2f2f2;
-    transform: rotateX(-90deg);
-    transform-origin: bottom;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.card__content a{
-    margin-top: 20px;
-}
-
-.card:hover .card__content {
-    transform: rotateX(0deg);
-}
-
-.card__title {
-    margin: 0;
-    font-size: 24px;
-    color: #333;
-    font-weight: 700;
-}
-
-.card:hover svg {
-    scale: 0;
-}
-
-.card__description {
-    margin: 10px 0 0;
-    font-size: 14px;
-    color: #777;
-    line-height: 1.4;
-}
-
-#card1{
-    background: url('../public/imgproject/projeto-login-page.jpg')no-repeat center center;
-}
-
-.button-projet{
-    border: none;
-    color: #fff;
-    background-image: linear-gradient(30deg, rgba(37,89,222,1) 0%, rgba(37,89,222,1) 7.5%, rgba(4,4,29,1));
-    border-radius: 10px;
-    background-size: 100% auto;
-    font-family: inherit;
-    font-size: 17px;
-    padding: 0.6em 1.5em;
-    margin-top: 20px;
-   }
-   
-   .button-projet:hover {
-    background-position: right center;
-    background-size: 200% auto;
-    -webkit-animation: pulse 2s infinite;
-    animation: pulse512 1.5s infinite;
-   }
-   
-   @keyframes pulse512 {
-    0% {
-     box-shadow: 0 0 0 0 #05bada66;
-    }
-   
-    70% {
-     box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
-    }
-   
-    100% {
-     box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
-    }
-   }
-
-@media (min-width: 1024px){
-    .info-mobile{
-        display: none;
-    }
-}
-
 @media (max-width: 1024px){
     #projetos .info-mobile{
         font-size: 10px;
         text-align: center;
         margin-bottom: 20px;
-    }
-    .card__content{
-        display: none;
-    }
-    .card svg {
-        display: none;
-    }
-    .card {
-        transform: scale(1.05);
-        box-shadow: 0 0 0;
-    }
-    .card:hover{
-        box-shadow: 0 0 0;
     }
 }
 
@@ -458,10 +336,6 @@ main p {
     }
     #projetos h1{
         font-size: 20px;
-    }
-    
-    .card{
-        width: 200px;
     }
 }
 
