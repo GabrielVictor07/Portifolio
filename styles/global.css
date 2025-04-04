@@ -14,7 +14,7 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
 
 :root{
-    --fontPrincipal: 'JetBrains Mono', 'monospace';
+    --fontPrincipal: 'JetBrains Mono', 'monospace' , 'Arial';
     --fontLogo: "Boldonse";
 }
 
