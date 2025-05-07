@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: var(--fontJetBrains);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root{
+    --fontJetBrains: "jetBrains Mono";
+    --color1:  #320e6f ;
+    --color2:  #250b59 ;
+    --color3:  #190743 ;
+    --color4:  #0c042d ;
+    --color5:  #000017 ;
+    --color6:  #4425d3;
+    --color7:  #2d14ee;
+}
+
+body{
+    background: linear-gradient(90deg, hsla(252, 84%, 10%, 1) 0%, hsla(262, 78%, 25%, 1) 100%);
+}
+
+header#header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+
+  .navbar a{
+      text-decoration: none;
+      margin-left: 40px;
+      font-family: var(--fontJetBrains);
+      font-weight: bolder;
+      color: white;
+      transition: 0.2s;
+
+      &:hover{
+          text-shadow: 0px 0px 5px rgb(255, 255, 255);
+          transition: 0.2s;
+      }
+  }
+}
+
+.contact-section {
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-section .section-title {
+  font-size: 32px;
+  margin-top: 30px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: var(--fontJetBrains);
+  font-weight: 1000;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px;
+  background-color: #1a1f27;
+  border: 1px solid #2c2f36;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #666cff;
+}
+
+.send-button {
+  background-color: var(--color7);
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.send-button:hover {
+  opacity: 0.85;
+}

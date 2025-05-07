@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root{
+    --fontJetBrains: "jetBrains Mono";
+    --color1:  #320e6f ;
+    --color2:  #250b59 ;
+    --color3:  #190743 ;
+    --color4:  #0c042d ;
+    --color5:  #000017 ;
+    --color6:  #4425d3;
+    --color7:  #2d14ee;
+}
+
+body{
+    background: linear-gradient(90deg, hsla(252, 84%, 10%, 1) 0%, hsla(262, 78%, 25%, 1) 100%);
+}
+
+header#header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+
+    .navbar a{
+        text-decoration: none;
+        margin-left: 40px;
+        font-family: var(--fontJetBrains);
+        font-weight: bolder;
+        color: white;
+        transition: 0.2s;
+
+        &:hover{
+            text-shadow: 0px 0px 5px rgb(255, 255, 255);
+            transition: 0.2s;
+        }
+    }
+}
+
+#container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    padding-top: 20px;
+}
+
+main#sobre-mim-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    border-radius: 20px;
+    gap: 30px;
+    padding: 40px 30px;
+    font-family: var(--fontJetBrains);
+    background-color: var(--color5);
+    border: solid 2px var(--color7);
+
+
+    .sobre-mim-img img{
+        width: 300px;
+        height: 400px;
+        border-radius: 10px;
+    }
+
+    .sobre-mim-content{
+        p{
+            font-size: 17px;
+            color: white;
+        }
+
+        h1{
+            margin-bottom: 20px;
+            font-size: 30px;
+            color: var(--color7);
+        }
+    }
+}
+  
+    #container-skilss{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+  .skills-section {
+    padding: 4rem 2rem;
+    color: white;
+    font-family: var(--fontJetBrains);
+    width: 80%;
+  }
+  
+  .skills-section h2 {
+    color: #22c55e;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .skills-section h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+  }
+  
+  .highlight {
+    color: #22c55e;
+  }
+  
+  .skills-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+  
+  .skills-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 1rem;
+    background-color: var(--color5);
+    border: solid 2px var(--color7);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    align-items: center;
+  }
+
+  
+  .skills-text {
+    flex: 2;
+    background-color: var(--color5);
+    border: solid 2px var(--color7);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    min-width: 150px;
+  }
+  
+  .skills-text p {
+    margin: 0.75rem 0;
+  }
+  
+  .skills-text .category {
+    color: var(--color7);
+    font-weight: 600;
+  }
+  
+  #container-service{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .services {
+    padding: 60px 20px;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    width: 80%;
+
+        i{
+            font-style: normal;
+        }
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    font-family: var(--fontJetBrains);
+  }
+  
+  .service-box {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .service {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: var(--color5);
+    border: 2px solid var(--color7);
+    border-radius: 12px;
+    padding: 20px 25px;
+  }
+  
+  .service h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+  }
+  
+  .service p {
+    margin: 0;
+    font-size: 15px;
+    color: #ccc;
+  }
+  
+  .icon {
+    font-size: 24px;
+    margin-top: 5px;
+  }
+  
