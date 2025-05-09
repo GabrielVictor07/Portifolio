@@ -22,14 +22,15 @@ body{
 }
 
 header#header{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
 
   .navbar a{
+      margin-left: 20px;
+      margin-right: 20px;
       text-decoration: none;
-      margin-left: 40px;
       font-family: var(--fontJetBrains);
       font-weight: bolder;
       color: white;
@@ -105,4 +106,13 @@ header#header{
 
 .send-button:hover {
   opacity: 0.85;
+}
+
+.mensagem-text{
+  position: relative;
+  bottom: 300px;
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  width: 300px;
 }

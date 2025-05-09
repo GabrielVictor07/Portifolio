@@ -18,7 +18,9 @@ window.onload = function () {
       emailjs.sendForm("service_9wwgq9p", "template_swza1g7", form)
         .then((result) => {
           console.log("✅ EmailJS result:", result);
-          alert("Mensagem enviada com sucesso!");
+          let msg = document.querySelector(".mensagem-text")
+          
+          msg.textContent = "Enviado com sucesso"
           form.reset();
         })
         .catch((error) => {

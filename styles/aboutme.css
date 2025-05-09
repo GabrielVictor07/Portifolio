@@ -28,8 +28,9 @@ header#header{
     padding: 10px 20px;
 
     .navbar a{
+        margin-left: 20px;
+        margin-right: 20px;
         text-decoration: none;
-        margin-left: 40px;
         font-family: var(--fontJetBrains);
         font-weight: bolder;
         color: white;
