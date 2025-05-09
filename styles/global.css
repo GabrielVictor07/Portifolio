@@ -44,7 +44,7 @@ header#header{
 
 #hero-section{
     display: flex;
-    height: 94vh;
+    height: 90vh;
     align-items: center;
     justify-content: center;
     gap: 50px;
@@ -172,3 +172,113 @@ header#header{
   .redes a:hover {
     width: 90px;
   }
+
+  /*media scree*/
+
+  @media (max-width: 720px) {
+    header#header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 20px;
+    
+        .navbar a{
+            display: none;
+        }
+    }
+    /*---------------------------------------*/
+    #hero-section{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        cursor: default;
+
+        .hero-content{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h1{
+                font-size: 40px;
+                font-family: var(--fontJetBrains);
+                color: white;
+            }
+    
+            span{
+                color: #2d14ee;
+                font-weight: bolder;
+                font-size: 60px;
+            }
+        }
+    
+        .botoes{
+            font-family: var(--fontJetBrains);
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+    
+        .btn-contatos{
+            border: solid white 2px;
+            color: white;
+            padding: 10px 100px;
+            border-radius: 50px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bolder;
+            transition: 0.2s;
+            display: block;
+        }
+
+        .btn-projetos{
+            background-color: var(--color7);
+            color: white;
+            padding: 10px 100px;
+            border-radius: 50px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bolder;
+            transition: 0.2s;
+            margin-bottom: 20px;
+            }
+
+            .botoes:hover{
+                background-color: var(--color7);
+                border: solid var(--color7) 2px;
+                transition: 0.2s;
+            }
+        }
+            .hero-img{
+                text-align: center;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+        
+                h1{
+                    color: var(--color7);
+                    font-family: var(--fontJetBrains);
+                    font-weight: bolder;
+                    font-size: 45px;
+                }
+        
+                p{
+                    color: white;
+                    font-family: var(--fontJetBrains);
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+@media (max-width: 720px) {
+    .redes{
+        position: fixed;
+    }
+}
