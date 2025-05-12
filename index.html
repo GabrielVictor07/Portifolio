@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back" />
     <link rel="stylesheet" href="styles/global.css">
     <title>Dev - Gabriel Motta</title>
 </head>
@@ -17,15 +19,23 @@
     <a href="#" class="discord"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0,0,256,256">
         <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8,8)"><path d="M7.5,5c-1.36719,0 -2.5,1.13281 -2.5,2.5v17c0,1.36719 1.13281,2.5 2.5,2.5h17c1.36719,0 2.5,-1.13281 2.5,-2.5v-17c0,-1.36719 -1.13281,-2.5 -2.5,-2.5zM7.5,7h17c0.28516,0 0.5,0.21484 0.5,0.5v17c0,0.28516 -0.21484,0.5 -0.5,0.5h-17c-0.28516,0 -0.5,-0.21484 -0.5,-0.5v-17c0,-0.28516 0.21484,-0.5 0.5,-0.5zM10.4375,8.71875c-0.94922,0 -1.71875,0.76953 -1.71875,1.71875c0,0.94922 0.76953,1.71875 1.71875,1.71875c0.94922,0 1.71875,-0.76953 1.71875,-1.71875c0,-0.94922 -0.76953,-1.71875 -1.71875,-1.71875zM19.46875,13.28125c-1.43359,0 -2.38672,0.78516 -2.78125,1.53125h-0.0625v-1.3125h-2.8125v9.5h2.9375v-4.6875c0,-1.23828 0.24609,-2.4375 1.78125,-2.4375c1.51172,0 1.53125,1.39844 1.53125,2.5v4.625h2.9375v-5.21875c0,-2.55469 -0.54297,-4.5 -3.53125,-4.5zM9,13.5v9.5h2.96875v-9.5z"></path></g></g>
         </svg>
-      </a>
-  </div>
+    </a>
+</div>
 
     <header id="header">
         <nav class="navbar">
             <a href="/index.html" target="_self" >Inicio</a>
             <a href="/pags/AboutMe.html">Sobre</a>
-            <a href="#">Projetos</a>
+            <a href="/pags/projetos.html">Projetos</a>
             <a href="/pags/Contatos.html" target="_self">Contatos</a>
+            <button onclick="NavbarBack()" class="back-nav-mobile"><span class="material-symbols-outlined">
+                arrow_back
+                </span></button>
+        </nav>
+        <nav class="nav-mobile">
+            <button onclick="Navbar()" class="enter-nav-mobile"><span class="material-symbols-outlined">
+                menu
+                </span></button>
         </nav>
     </header>
 
@@ -33,7 +43,7 @@
         <div class="hero-content">
             <h1>Olá sou um <br> Desenvolvedor <br> <span>Full-Stack</span></h1>
                 <div class="botoes">
-                    <a href="#" class="btn-projetos">Ver Projetos</a>
+                    <a href="pags/projetos.html" class="btn-projetos">Ver Projetos</a>
                     <a href="pags/Contatos.html" class="btn-contatos">Contatos</a>
                 </div>
         </div>
@@ -43,5 +53,7 @@
             <p>Web Developer</p>
         </div>
     </main>
+
+    <script src="/public/script/script.js"></script>
 </body>
 </html>
