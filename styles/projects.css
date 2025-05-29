@@ -35,7 +35,8 @@ header#header {
     align-items: center;
     justify-content: center; /* Ajustado para espaçar a navbar e o botão mobile */
     padding: 10px 20px;
-    z-index: 1002; /* Z-index alto para a navbar ficar sempre por cima */
+    z-index: 1002;
+    background-color: var(--color6); /* Z-index alto para a navbar ficar sempre por cima */
 }
 
 /* Navbar de desktop */

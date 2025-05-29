@@ -21,34 +21,49 @@ body{
     background: var(--color5);
 }
 
-header#header{
+header#header {
+    text-align: center;
+    position: fixed; /* Header fixo no topo para desktop */
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Ajustado para espaçar a navbar e o botão mobile */
     padding: 10px 20px;
-    
-    .enter-nav-mobile{
-        display: none;
-    }
+    z-index: 1002; 
+    background-color: var(--color6);/* Z-index alto para a navbar ficar sempre por cima */
+}
 
-    .back-nav-mobile{
-        display: none;
-    }
+/* Navbar de desktop */
+header#header .navbar {
+    display: flex; /* Garante que os links apareçam em desktop */
+    align-items: center;
+    justify-content: center;
+    width: auto; /* Deixa a largura ser definida pelo conteúdo */
+}
 
-    .navbar a{
-        text-decoration: none;
-        margin-left: 20px;
-        margin-right: 20px;
-        font-family: var(--fontJetBrains);
-        font-weight: bolder;
-        color: white;
-        transition: 0.2s;
+header#header .navbar a {
+    text-decoration: none;
+    margin: 0 20px; /* Margem dos links */
+    font-family: var(--fontJetBrains);
+    font-weight: bolder;
+    color: white;
+    transition: 0.2s;
 
-        &:hover{
-            text-shadow: 0px 0px 5px rgb(255, 255, 255);
-            transition: 0.2s;
-        }
+    &:hover {
+        text-shadow: 0px 0px 5px rgb(255, 255, 255);
     }
+}
+
+/* Esconder botão de fechar no desktop */
+.back-nav-mobile {
+    display: none;
+}
+
+/* Esconder o container do botão de abrir no desktop */
+.nav-mobile {
+    display: none;
 }
 
 #hero-section{
@@ -184,95 +199,88 @@ header#header{
 
   /*media scree*/
 
-  @media (max-width: 720px) {
-    header#header{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    
-        .navbar{
-            display: none;
-            flex-direction: column;
-            position: fixed;
-            background-color: var(--color5);
-            top: 0px;
-            width: 100%;
-            align-items: center;
-            height: 90%;
-            justify-content: center;
-            gap: 20px;
-            padding: 50px 0px;
-        }
+@media (max-width: 720px) {
+    /* Oculta a navbar de desktop e mostra os botões mobile */
 
-        .navbar a{
-            text-align: center;
-            text-decoration: none;
-            font-family: var(--fontJetBrains);
-            font-weight: bolder;
-            color: white;
-            transition: 0.2s;
-            width: 80%;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            height: 5%;
-            font-size: 2em;
-            padding: 10px 0px;
-        }
-
-        .enter-nav-mobile{
-            display: flex;
-            background-color: transparent;
-            border: none;
-            position: fixed;
-            right: 10px;
-
-            .material-symbols-outlined {
-                font-family: 'Material Symbols Outlined';
-                font-weight: normal;
-                font-style: normal;
-                font-size: 40px;
-                line-height: 1;
-                letter-spacing: normal;
-                text-transform: none;
-                display: inline-block;
-                white-space: nowrap;
-                word-wrap: normal;
-                direction: ltr;
-                -webkit-font-feature-settings: 'liga';
-                -webkit-font-smoothing: antialiased;
-                color: white;
-            }
-        }
-
-        .back-nav-mobile{
-            display: flex;
-            position: fixed;
-            top: 50px;
-            right: 50px;
-            border-radius: 50%;
-            padding: 10px;
-            background-color: var(--color7);
-            border: none;
-
-            .material-symbols-outlined {
-                font-family: 'Material Symbols Outlined';
-                font-weight: normal;
-                font-style: normal;
-                font-size: 30px;
-                line-height: 1;
-                letter-spacing: normal;
-                text-transform: none;
-                display: inline-block;
-                white-space: nowrap;
-                word-wrap: normal;
-                direction: ltr;
-                -webkit-font-feature-settings: 'liga';
-                -webkit-font-smoothing: antialiased;
-                color: white;
-            }
-        }
+    header#header {
+        /* Apenas mostra o botão de abrir menu no canto direito */
+        justify-content: space-between; /* Espaço entre possível logo e botão */
+        /* O padding já está no header#header geral */
     }
+
+    header#header .navbar {
+        /* A navbar desktop deve SUMIR e ser substituída pela navbar mobile */
+        display: none; /* Esconde a navbar desktop por padrão no mobile */
+        flex-direction: column;
+        position: fixed; /* Torna a navbar mobile fixa */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Ocupa a altura total da viewport */
+        background-color: var(--color5);
+        align-items: center; /* Centraliza os links horizontalmente */
+        justify-content: center; /* Centraliza os links verticalmente */
+        gap: 20px;
+        padding-top: 60px; /* Padding para o botão de fechar não sobrepor o primeiro link */
+        padding-bottom: 20px;
+        box-sizing: border-box; /* Crucial para o padding ser incluído na altura */
+        z-index: 1001; /* Z-index para a navbar mobile */
+        transform: translateX(100%); /* Começa fora da tela para animar a entrada */
+        transition: transform 0.3s ease-out;
+        overflow-y: auto; /* Permite rolagem se o conteúdo for grande */
+    }
+
+    /* Classe para mostrar a navbar mobile (adicionada/removida por JS) */
+    header#header .navbar.open {
+        display: flex; /* Muda para flexbox quando a classe 'open' é adicionada */
+        transform: translateX(0); /* Entra na tela */
+    }
+
+    header#header .navbar a {
+        font-size: 2em; /* Tamanho maior para mobile */
+        padding: 10px 0; /* Padding para os links */
+        width: 80%; /* Para os links ocuparem uma largura razoável */
+    }
+
+    /* Mostrar o container do botão de abrir menu */
+    .nav-mobile {
+        display: flex; /* Mostra o container do botão de menu mobile */
+        /* Ajuste a posição deste container dentro do header se for preciso alinhar */
+        justify-content: flex-end; /* Mover o botão para a direita */
+    }
+
+    .enter-nav-mobile {
+        display: flex; /* Exibe o botão de abrir no mobile */
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1003; /* Z-index para o botão de abrir */
+    }
+    .enter-nav-mobile .material-symbols-outlined {
+        font-size: 40px;
+        color: white;
+    }
+
+    /* Botão de fechar (dentro de .navbar) */
+    .back-nav-mobile {
+        display: flex; /* Exibe o botão de fechar no mobile */
+        position: absolute; /* Posiciona em relação à .navbar */
+        top: 20px; /* Ajuste para o canto superior direito da .navbar */
+        right: 20px;
+        border-radius: 50%;
+        padding: 10px;
+        background-color: var(--color7);
+        border: none;
+        cursor: pointer;
+        z-index: 1002; /* Z-index do botão de fechar, acima dos links da navbar */
+    }
+    .back-nav-mobile .material-symbols-outlined {
+        font-size: 30px;
+        color: white;
+    }
+}
+
+  @media (max-width: 720px) {
     /*---------------------------------------*/
     #hero-section{
         display: flex;

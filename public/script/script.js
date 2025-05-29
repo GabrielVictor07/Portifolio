@@ -1,20 +1,29 @@
-AOS.init({
-        duration: 1000, // Tempo da animação (1s)
-        once: false, // A animação ocorre varias vezes
+// No seu arquivo script.js
+
+function Navbar() {
+    const navbar = document.querySelector('header#header .navbar');
+    if (navbar) {
+        navbar.classList.add('open');
+    }
+}
+
+function NavbarBack() {
+    const navbar = document.querySelector('header#header .navbar');
+    if (navbar) {
+        navbar.classList.remove('open');
+    }
+}
+
+// Opcional: Fechar navbar ao clicar em um link (se a navbar estiver aberta)
+document.addEventListener('DOMContentLoaded', () => {
+    const navbarLinks = document.querySelectorAll('header#header .navbar a');
+    const navbar = document.querySelector('header#header .navbar');
+
+    navbarLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbar.classList.contains('open')) {
+                navbar.classList.remove('open');
+            }
+        });
     });
-
-
-function Navbar(){
-    let nav = document.querySelector('.navbar')
-    let navbutton = document.querySelector('.enter-nav-mobile')
-    nav.style.display = "flex"
-    navbutton.style.display = 'none'
-
-}
-
-function NavbarBack(){
-    let nav = document.querySelector('.navbar')
-    let navbutton = document.querySelector('.enter-nav-mobile')
-    nav.style.display = "none"
-    navbutton.style.display = 'flex'
-}
+});
