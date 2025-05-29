@@ -216,7 +216,8 @@ header#header{
             display: flex;
             justify-content: center;
             height: 5%;
-            font-size: 30px;
+            font-size: 2em;
+            padding: 10px 0px;
         }
 
         .enter-nav-mobile{
