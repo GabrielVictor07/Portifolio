@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --dark-bg: #1a1a1a;
     --text-color: #f0f0f0;
@@ -17,8 +22,6 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: var(--color5);
     color: var(--text-color);
     line-height: 1.6;
@@ -36,6 +39,7 @@ header#header {
     justify-content: center; /* Ajustado para espaçar a navbar e o botão mobile */
     padding: 10px 20px;
     z-index: 1002;
+    height: 21px;
     background-color: var(--color6); /* Z-index alto para a navbar ficar sempre por cima */
 }
 
@@ -212,6 +216,7 @@ body {
     /* Oculta a navbar de desktop e mostra os botões mobile */
 
     header#header {
+        height: 40px;
         /* Apenas mostra o botão de abrir menu no canto direito */
         justify-content: space-between; /* Espaço entre possível logo e botão */
         /* O padding já está no header#header geral */

@@ -70,7 +70,7 @@ header#header .navbar a {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 75vh;
+    height: 100vh;
     padding-top: 20px;
 }
 
@@ -333,7 +333,7 @@ main#sobre-mim-container{
       padding: 40px 30px;
       font-family: var(--fontJetBrains);
       background-color: var(--color5);
-      border: solid 2px var(--color7);
+      border: none;
       flex-direction: column;
   
   

@@ -23,10 +23,8 @@ body{
 
 header#header {
     text-align: center;
-    position: fixed; /* Header fixo no topo para desktop */
     top: 0;
     left: 0;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center; /* Ajustado para espaçar a navbar e o botão mobile */
@@ -73,7 +71,7 @@ header#header .navbar a {
 }
 
 .contact-section .section-title {
-  font-size: 32px;
+  font-size: 28px;
   margin-top: 30px;
   text-transform: uppercase;
   margin-bottom: 20px;
