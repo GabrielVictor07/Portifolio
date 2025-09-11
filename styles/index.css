@@ -404,6 +404,10 @@
     flex-direction: column;
     text-align: center;
     padding: 20px;
+    .foto-perfil{
+        width: 200px;
+        height: 250px
+    }
   }
 
   .span-4 .text-perfil {
@@ -429,7 +433,7 @@
 
   .span-9 .social-container {
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
   }
 
   .span-14{
