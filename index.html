@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 <link rel="stylesheet" href="styles/index.css">
 <title>Gabriel Motta - Desenvolvedor Web</title>
 </head>
@@ -24,7 +25,7 @@
             <p>Eu sou desenvolvedor Full-Stack em Recife, PE.</p>
         </div>
     </div>
-    <div class="card span-8">
+    <div class="card span-8" data-aos="fade-left" data-aos-duration="1000">
         <div class="linguage-container">
             <span>
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
@@ -65,7 +66,7 @@
     </div>
 
     <!-- Linha 2 -->
-    <div class="card span-6">
+    <div class="card span-6" data-aos="fade-up" data-aos-duration="1000">
         <div class="project-container">
             <div>
                 <h1>Projetos</h1>
@@ -74,7 +75,7 @@
                        
         </div>
     </div>
-    <div class="card span-9">
+    <div class="card span-9" data-aos="fade-up" data-aos-duration="1000">
         <div class="social-container">
             <a href="https://www.linkedin.com/in/gabriel-victor-a677b9344?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
                 <span>
@@ -106,7 +107,7 @@
     </div>
 
     <!-- Linha 3 -->
-    <div class="card span-12">
+    <div class="card span-12" data-aos="fade-up" data-aos-duration="1000">
         <div class="estatisticas-container">
             <span>
                 <h2>01</h2>
@@ -141,7 +142,7 @@
             </span>
         </div>
     </div>
-    <div class="card span-14">
+    <div class="card span-14" data-aos="fade-up" data-aos-duration="1000">
         <div class="text-container">
             <h1><i>Vamos</i> <br> Trabalhar Juntos?</h1>
 
@@ -190,5 +191,16 @@
     <p>&copy; 2025 Gabriel Motta - Todos os direitos reservados</p>
   </div>
 </footer>
+
+
+// AOS Animation
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // duração da animação (ms)
+    once: true // anima apenas 1 vez
+  });
+</script>
+
 </body>
 </html>
