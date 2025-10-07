@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #121212;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+        
+        /* Container principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Cabeçalho */
+        header {
+            padding: 60px 0 40px;
+            text-align: center;
+            background-color: #1b1b1b;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #c94b4b;
+            background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);  
+            background: linear-gradient(to right, #4b134f, #c94b4b);
+            background-size: 200% 200%;
+            animation: gradientMove 3s ease infinite;
+        }
+        
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            background: #c94b4b;
+            background: -webkit-linear-gradient(to right, #4b134f, #c94b4b);  
+            background: linear-gradient(to right, #4b134f, #c94b4b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: #aaa;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #c94b4b;
+        }
+        
+        /* Grid de projetos */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .project-card {
+            background-color: #1b1b1b;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            border: 1px solid #2a2a2a;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to bottom, #2b2b2b, #1f1f1f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-img::before {
+            content: '';
+            position: absolute;
+            color: #555;
+            font-style: italic;
+        }
+
+        .img1{
+            background-image: url('img/{6983E8D7-2340-4A54-BD5C-0A5FCC2B9C20}.png');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .project-info {
+            padding: 25px;
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: #fff;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .project-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(to right, #4b134f, #c94b4b);
+            border-radius: 3px;
+        }
+        
+        .project-desc {
+            color: #aaa;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .tag {
+            background: linear-gradient(to right, #4b134f, #c94b4b);
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #c94b4b;
+            text-decoration: none;
+            font-weight: 600;
+            transition: gap 0.3s ease;
+        }
+        
+        .project-link:hover {
+            gap: 12px;
+        }
+        
+        /* Seção de contato */
+        .contact {
+            text-align: center;
+            padding: 60px 0;
+            background-color: #1b1b1b;
+            margin-top: 40px;
+            border-radius: 12px;
+        }
+        
+        .contact h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #4b134f, #c94b4b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .contact p {
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(to right, #4b134f, #c94b4b);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(75, 19, 79, 0.3);
+        }
+        
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            margin-top: 60px;
+            border-top: 1px solid #2a2a2a;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-card {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Meus Projetos</h1>
+            <p class="subtitle">Uma coleção dos meus trabalhos mais recentes, demonstrando minhas habilidades e experiência em desenvolvimento e design.</p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-behance"></i></a>
+                <a href="#"><i class="fab fa-dribbble"></i></a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="projects-grid">
+            <!-- Projeto 1 -->
+            <div class="project-card">
+                <div class="project-img img1"></div>
+                <div class="project-info">
+                    <h3 class="project-title">E-commerce Completo</h3>
+                    <p class="project-desc">Plataforma de e-commerce desenvolvida com Tailwind e Node.js, integrada com gateway de pagamento e painel administrativo.</p>
+                    <div class="project-tags">
+                        <span class="tag">Tailwind</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                    <a href="https://urbanstyleecommerce.netlify.app/" class="project-link">
+                        <span>Ver projeto</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Projeto 2 -->
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3 class="project-title">App de Task Management</h3>
+                    <p class="project-desc">Aplicativo para gerenciamento de tarefas com sincronização em tempo real entre dispositivos e notificações.</p>
+                    <div class="project-tags">
+                        <span class="tag">Flutter</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">UI Design</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        <span>Ver projeto</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Projeto 3 -->
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3 class="project-title">Site Corporativo</h3>
+                    <p class="project-desc">Website institucional moderno e responsivo para empresa de tecnologia com design minimalista e elegante.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Responsivo</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        <span>Ver projeto</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Projeto 4 -->
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3 class="project-title">Dashboard Analytics</h3>
+                    <p class="project-desc">Painel administrativo com visualização de dados e métricas de negócio em tempo real e relatórios personalizáveis.</p>
+                    <div class="project-tags">
+                        <span class="tag">Vue.js</span>
+                        <span class="tag">Chart.js</span>
+                        <span class="tag">API REST</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        <span>Ver projeto</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Projeto 5 -->
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3 class="project-title">Redesign de Aplicativo</h3>
+                    <p class="project-desc">Redesign completo de interface de aplicativo móvel com foco em experiência do usuário e acessibilidade.</p>
+                    <div class="project-tags">
+                        <span class="tag">UI/UX</span>
+                        <span class="tag">Figma</span>
+                        <span class="tag">Design System</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        <span>Ver projeto</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Projeto 6 -->
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <h3 class="project-title">API de Autenticação</h3>
+                    <p class="project-desc">Sistema de autenticação seguro com JWT, recuperação de senha e verificação em duas etapas.</p>
+                    <div class="project-tags">
+                        <span class="tag">Node.js</span>
+                        <span class="tag">JWT</span>
+                        <span class="tag">Segurança</span>
+                    </div>
+                    <a href="#" class="project-link">
+                        <span>Ver projeto</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact">
+            <h2>Interessado em trabalhar juntos?</h2>
+            <p>Estou sempre aberto a discutir novos projetos e oportunidades. Entre em contato!</p>
+            <a href="mailto:seuemail@portfolio.com" class="btn">Entrar em Contato</a>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Gabriel Motta. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
