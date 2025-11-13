@@ -1,78 +1,65 @@
-  // Menu Toggle for Mobile
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-        
-        // Close menu when clicking on a link
-        const links = document.querySelectorAll('.nav-links a');
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-        
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
-            contactForm.reset();
-        });
+    AOS.init({
+    duration: 1000, // Duração da animação (em ms)
+    once: false, // só anima na primeira vez que aparece
+  });
+    // Mobile menu
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const iconOpen = document.getElementById('iconOpen');
+    const iconClose = document.getElementById('iconClose');
 
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+    mobileBtn.addEventListener('click', () => {
+      const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+      mobileBtn.setAttribute('aria-expanded', String(!expanded));
+      mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
 
-            // Back to top button
-            const backToTop = document.getElementById('backToTop');
-            if (window.scrollY > 300) {
-                backToTop.classList.add('active');
-            } else {
-                backToTop.classList.remove('active');
-            }
-        });
+    // Start hidden for mobile menu
+    mobileMenu.classList.add('hidden');
 
-        // Typing effect
-        const typingText = document.querySelector('.typing-text');
-        const texts = [
-            "Especialista em React, Node.js e UI/UX Design",
-            "Desenvolvedor Full Stack",
-            "Criador de Soluções Digitais"
-        ];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
+    // IntersectionObserver reveal
+    const reveals = document.querySelectorAll('.reveal');
 
-        function type() {
-            const currentText = texts[textIndex];
-            
-            if (isDeleting) {
-                typingText.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingText.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            if (!isDeleting && charIndex === currentText.length) {
-                isDeleting = true;
-                setTimeout(type, 2000);
-            } else if (isDeleting && charIndex === 1) {
-                isDeleting = false;
-                textIndex = (textIndex + 1) % texts.length;
-                setTimeout(type, 500);
-            } else {
-                setTimeout(type, isDeleting ? 50 : 100);
-            }
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          // optional: unobserve to avoid toggling
+          obs.unobserve(entry.target);
         }
+      });
+    }, { threshold: 0.12 });
 
-        // Start typing effect
-        setTimeout(type, 1000)
+    reveals.forEach(el => obs.observe(el));
+
+    // Smooth scroll for anchor links (nice UX)
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if (href.length > 1) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Mensagem enviada com sucesso!');
+    this.reset();
+  });
+
+  // Movimento suave dos blurs conforme a rolagem
+    const blobs = document.querySelectorAll('.blur-blob');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      blobs.forEach((blob, i) => {
+        const speed = (i + 1) * 0.3; // controla o ritmo de movimento
+        blob.style.transform = `translateY(${scrollY * speed}px)`;
+      });
+    });
