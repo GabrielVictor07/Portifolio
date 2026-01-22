@@ -134,7 +134,7 @@ const Hero = () => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <image
-              href="../../public/hero/backgroundHeroContent.jpg"
+              href="/hero/backgroundHeroContent.jpg"
               x="0"
               y="0"
               width="1200"
