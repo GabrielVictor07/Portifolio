@@ -223,7 +223,7 @@ const Projects = () => {
     <section ref={sectionRef} className="relative py-32 md:py-4">
       <div className="max-w-7xl mx-auto px-6">
         <div className="projects-header mb-12 md:mb-16">
-          <span className="text-blue-500 text-sm tracking-widest uppercase">
+          <span className="text-red-500 text-sm tracking-widest uppercase">
             Portfólio
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 text-white">
@@ -239,8 +239,8 @@ const Projects = () => {
               onClick={() => updateFilters(cat.id)}
               className={`filter-button relative px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border overflow-hidden
                 ${isFilterActive(cat.id)
-                  ? 'bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-600/25'
-                  : 'bg-transparent text-gray-300 border-gray-700 hover:border-blue-500 hover:text-blue-400'
+                  ? 'bg-red-600 text-white border-red-600 shadow-lg shadow-red-600/25'
+                  : 'bg-transparent text-gray-300 border-gray-700 hover:border-red-500 hover:text-red-400'
                 }`}
             >
               <span className="relative z-10">{cat.label}</span>
@@ -262,7 +262,7 @@ const Projects = () => {
               ref={(el) => (itemsRef.current[index] = el)}
               className="group cursor-pointer block"
             >
-              <div className="relative overflow-hidden rounded-2xl border border-border bg-card transition-all duration-500 group-hover:border-primary/50 group-hover:shadow-xl group-hover:shadow-primary/10">
+              <div className="relative overflow-hidden rounded-2xl border border-border bg-card transition-all duration-500 group-hover:border-red-500/50 group-hover:shadow-xl group-hover:shadow-red-500/10">
                 {/* Image with Gradient Overlay */}
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-60 z-10 transition-opacity duration-500 group-hover:opacity-40`} />
@@ -281,10 +281,10 @@ const Projects = () => {
 
                 {/* Content */}
                 <div className="relative z-30 p-5 -mt-12">
-                  <span className="inline-block px-3 py-1 text-xs tracking-wider uppercase font-medium bg-blue-500/20 text-blue-400 rounded-full mb-3">
+                  <span className="inline-block px-3 py-1 text-xs tracking-wider uppercase font-medium bg-red-500/20 text-red-400 rounded-full mb-3">
                     {project.categoryLabel}
                   </span>
-                  <h3 className="text-lg font-bold mb-2 text-white group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-lg font-bold mb-2 text-white group-hover:text-red-400 transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-gray-400 text-sm line-clamp-2">

@@ -15,16 +15,16 @@
     --popover: 240 10% 6%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 225 105% 65%;
+    --primary: 349 80% 55%;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 225 105% 15% / 0.4;
+    --secondary: 349 100% 50% / 0.4;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 240 10% 15%;
     --muted-foreground: 240 5% 55%;
 
-    --accent: 280 80% 70%;
+    --accent: 347 100% 50%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
@@ -37,19 +37,19 @@
     --radius: 0.75rem;
 
     /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(225 105% 60%) 0%, hsl(225 105% 60%) 50%, hsl(225 105% 60%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(349 80% 55%) 0%, hsl(347 100% 50%) 50%, hsl(349 80% 55%) 100%);
     --gradient-dark: linear-gradient(180deg, hsl(240 10% 4%) 0%, hsl(240 10% 8%) 100%);
-    --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(225 105% 60% / 0.3) 0%, transparent 60%);
-    --gradient-footer: radial-gradient(ellipse 80% 50% at 50% 120%, hsl(225 105% 60% / 0.4) 0%, transparent 60%);
+    --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(349 80% 55% / 0.3) 0%, transparent 60%);
+    --gradient-footer: radial-gradient(ellipse 80% 50% at 50% 120%, hsl(347 100% 50% / 0.4) 0%, transparent 60%);
     
-    --shadow-glow: 0 0 60px hsl(225 105% 50% / 0.4);
+    --shadow-glow: 0 0 60px hsl(347 100% 50% / 0.4);
     --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.3);
 
     --font-display: 'Space Grotesk', sans-serif;
 
     --gradient-hero-soft: radial-gradient(
   ellipse 80% 50% at 50% -20%,
-  hsl(225 105% 60% / 0.4) 0%,
+  hsl(349 80% 55% / 0.4) 0%,
   transparent 60%
 );
 
@@ -175,21 +175,15 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 220px;
-  height: 220px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
 
-  background: radial-gradient(
-    circle,
-    rgba(23, 58, 255, 0.35) 0%,
-    rgba(34, 67, 255, 0.15) 40%,
-    rgba(0, 38, 255, 0.05) 60%,
-    transparent 70%
-  );
+  border: 2px solid #ff0040;
+  background: transparent;
 
-  filter: blur(20px);
   transform: translate(-50%, -50%);
   mix-blend-mode: screen;
 }
